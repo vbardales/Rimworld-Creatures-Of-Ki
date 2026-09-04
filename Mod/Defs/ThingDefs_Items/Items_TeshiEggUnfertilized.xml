@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- The missing unfertilized egg: in 1.6 CompEggLayer really does call
+       ThingMaker.MakeThing(Props.eggUnfertilizedDef) and throws if the field is null. -->
+
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggTeshiUnfertilized</defName>
+    <label>teshi egg (unfert.)</label>
+    <description>An unfertilized teshi egg. It can be eaten raw, but it's much, much better cooked.</description>
+    <graphicData>
+      <color>(235,235,235)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>125.0</MarketValue>
+    </statBases>
+  </ThingDef>
+
+</Defs>

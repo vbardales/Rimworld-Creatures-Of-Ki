@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Creatures of Ki - Teshi 1.6</name>
+  <author>Shooki, Mlie - 1.6 port: nelim</author>
+  <packageId>nelim.creaturesofki</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <url>https://github.com/vbardales/Rimworld-Creatures-Of-Ki</url>
+  <description>The teshi from Shooki's Creatures of Ki, brought forward to RimWorld 1.6. A large bipedal feathered predator from the forest planet Ki, and its eggs.
+
+I am not the author of this mod. The design, the textures and the original idea are Shooki's, and the 1.0 to 1.4 continuation is Mlie's - all I did was the work needed to make the animal run on 1.6. Credit goes to them; mistakes in the update are mine. If either comes back to it, or asks me to take this down, I will.
+
+Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020
+
+What it adds
+
+- The teshi: a predator the size of a small elephant, trainable to intermediate, with claws and a bite worth 25 damage. It nuzzles. It lays eggs, and it lives eighty years.
+- Teshi eggs, fertilized and unfertilized. Fifteen days to hatch.
+- Found in shrubland, forest, rainforest, boreal forest and tundra, sparsely, and almost never on ice or desert.
+
+What is not included
+
+Creatures of Ki is four fifths a playable race: the Kija, their faction and their name makers, all of which need Humanoid Alien Races. None of that is here, and this mod needs no Humanoid Alien Races. If you want the Kija, use the original.
+
+What changed in the 1.6 update
+
+- Wildness stopped being a race property. In 1.6 it is a Wildness StatDef declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
+- The unfertilized egg was missing. In 1.6 CompEggLayer really does build eggUnfertilizedDef as soon as an animal lays without having been fertilized, and throws if the field is null - an in-game crash, not a config warning, on an animal that lays unprompted. The def was written, taking the market value of its fertilized counterpart.
+
+No balance value was changed.
+
+Content mod: removing it mid-game will lose any teshi and any teshi eggs already in play.
+
+Source, changelog and the full list of what the port changed: https://github.com/vbardales/Rimworld-Creatures-Of-Ki
+
+Licensed MIT, like the original. The update work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Shooki for the animal and to Mlie for keeping it alive to 1.4.
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+  </loadAfter>
+</ModMetaData>
