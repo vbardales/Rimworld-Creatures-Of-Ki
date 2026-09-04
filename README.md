@@ -13,9 +13,15 @@ still online, last supporting 1.4. Abandoned, not withdrawn.
 
 It adds one animal and its eggs.
 
-- **Teshi** — a bipedal feathered predator, body size 3.5, health scale 4.0, worth 2000 silver.
-  Two claws at 18 damage, a bite at 25, a head bash at 12. Trainable to intermediate, it nuzzles,
-  and it lives eighty years. Comfortable from −80 °C to 60 °C, which is to say anywhere.
+- **Teshi** — body size 3.5, health scale 4.0, worth 2000 silver. Two claws at 18 damage, a bite at
+  25, a head bash at 12. Trainable to intermediate, it nuzzles, and it lives eighty years.
+  Comfortable from −80 °C to 60 °C, which is to say anywhere.
+
+  Its own description calls it "a large, bipedal feathered predator", which will have you
+  picturing a raptor. The artwork is nothing of the sort: a round, heavy, low-sitting animal with
+  **four wide banded ears**, two a side, and a short dark crest — the bulk of a bear on the build
+  of a giant chinchilla. It is a predator all the same, and damaging one turns it manhunter three
+  times in four.
 - **Teshi eggs**, fertilized and unfertilized. One egg fertilized at a time, laid every fifteen
   days, hatching after fifteen more.
 - Spawns sparsely in shrubland, temperate forest, boreal forest and tundra, a little more in
