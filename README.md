@@ -49,12 +49,16 @@ Two breakages, both silent in different ways.
   `statBases`, and the old `<race><wildness>` was ignored outright. Ludeon gave the stat
   `defaultBaseValue -1`, deliberately outside the `[0,1]` range, precisely so animals that lost the
   value show up. Untouched, the teshi tamed about as easily as a rat.
-- **The unfertilized egg became mandatory.** An egg-layer declaring only its fertilized egg used to
-  be tolerated. In 1.6 `CompEggLayer` really does call
-  `ThingMaker.MakeThing(Props.eggUnfertilizedDef)` as soon as an animal lays without having been
-  fertilized, and throws if the field is null. That is an in-game exception, not a load-time
-  warning, on an animal that lays unprompted every fifteen days. `EggTeshiUnfertilized` was
-  written, taking the market value of its fertilized counterpart.
+- **The unfertilized egg was missing.** Every egg-laying animal in Core declares one, and the teshi
+  did not. It is reachable here for a plainer reason than a crash: the comp lays two eggs at a time
+  and offers one fertilization, so the second egg of a laying has nothing to be but unfertilized.
+  `EggTeshiUnfertilized` was written, taking the market value of its fertilized counterpart.
+
+  This entry used to say that `CompEggLayer` throws whenever an animal lays unfertilized, making
+  the def mandatory. That went further than the evidence: for animals whose
+  `eggProgressUnfertilizedMax` is below 1 — the teshi's is 0.9, inherited untouched — progress
+  stops short and the animal may never lay unmated at all. Unconfirmed in either direction, since
+  the mod has not yet run. See `TESTS.md`, scenario 4.
 
 No balance value was changed. Nothing else in the teshi's defs needed touching: no `deathAction`,
 no toxic sensitivity, no C#.

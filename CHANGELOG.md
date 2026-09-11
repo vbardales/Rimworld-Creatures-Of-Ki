@@ -14,10 +14,18 @@ through 1.4.
 ### Added
 
 - Support for RimWorld 1.6.
-- `EggTeshiUnfertilized`. The mod declared only its fertilized egg, which 1.4 tolerated. In 1.6
-  `CompEggLayer` builds `eggUnfertilizedDef` as soon as an animal lays without having been
-  fertilized, and throws if the field is null — an in-game exception on an animal that lays every
-  fifteen days unprompted. The new def carries the fertilized egg's market value.
+- `EggTeshiUnfertilized`. The mod declared only its fertilized egg. Every egg-layer in Core
+  declares both, without exception — chicken, duck, goose, turkey, ostrich, emu, cassowary, cobra,
+  tortoise and iguana — and the teshi lays two eggs at a time with only one fertilization available
+  (`eggCountRange` 2, `eggFertilizationCountMax` 1), so the second egg of a laying has nothing to
+  be but unfertilized. The new def carries the fertilized egg's market value.
+
+  An earlier wording of this entry said `CompEggLayer` throws whenever an animal lays without
+  having been fertilized. That was stated too absolutely. The 1.6 port of Race to the Rim found
+  the unfertilized branch unreachable for animals whose `eggProgressUnfertilizedMax` sits below 1,
+  and the teshi's is 0.9 — inherited from upstream, not set here. Whether a null field would
+  actually have crashed this particular animal is therefore unconfirmed; `TESTS.md`, scenario 4,
+  is written to settle it. The def is right either way. Only the reason given for it was overstated.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed

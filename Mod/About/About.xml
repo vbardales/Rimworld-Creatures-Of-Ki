@@ -26,7 +26,7 @@ Creatures of Ki is four fifths a playable race: the Kija, their faction and thei
 What changed in the 1.6 update
 
 - Wildness stopped being a race property. In 1.6 it is a Wildness StatDef declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
-- The unfertilized egg was missing. In 1.6 CompEggLayer really does build eggUnfertilizedDef as soon as an animal lays without having been fertilized, and throws if the field is null - an in-game crash, not a config warning, on an animal that lays unprompted. The def was written, taking the market value of its fertilized counterpart.
+- The unfertilized egg was missing. Every egg-laying animal in the base game declares one, and the teshi did not. It lays two eggs at a time with a single fertilization available, so the second egg of a laying has nothing to be but unfertilized. The def was written, taking the market value of its fertilized counterpart.
 
 No balance value was changed.
 

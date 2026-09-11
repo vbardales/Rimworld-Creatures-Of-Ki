@@ -54,20 +54,36 @@ default to `-1`, outside the `[0, 1]` the game actually uses, precisely so an an
 value is conspicuous rather than quietly tame. The teshi is a manhunter-prone predator with a
 health scale of 4; taming it for free is not a cosmetic difference.
 
-### The unfertilized egg had to be written
+### The unfertilized egg was written
 
-`Races_Animal_Teshi.xml` declared `eggFertilizedDef` and nothing else. Up to 1.4 that was
-tolerated. In 1.6:
+`Races_Animal_Teshi.xml` declared `eggFertilizedDef` and nothing else. Every egg-laying animal in
+Core declares both — chicken, duck, goose, turkey, ostrich, emu, cassowary, cobra, tortoise,
+iguana — so the teshi was the exception, not the rule.
 
-```csharp
-// CompEggLayer, on laying without fertilization
-Thing thing = ThingMaker.MakeThing(Props.eggUnfertilizedDef);
+It is reachable here, and not for the reason one would guess. The comp reads, upstream's values
+untouched:
+
+```xml
+<eggFertilizationCountMax>1</eggFertilizationCountMax>
+<eggCountRange>2</eggCountRange>
+<eggProgressUnfertilizedMax>0.9</eggProgressUnfertilizedMax>
 ```
 
-`eggUnfertilizedDef` being null throws there, in game, on an animal that lays every fifteen days
-whether or not anyone asked. `EggTeshiUnfertilized` is a new def on `EggUnfertBase`, carrying the
-market value of the fertilized egg (125) and the same near-white tint, so the pair reads as one
-animal's eggs. It is the only def in this mod that is not Shooki's.
+Two eggs a laying, one fertilization available. The second egg of a laying has nothing to be but
+unfertilized, whether or not the female ever met a male.
+
+`EggTeshiUnfertilized` is a new def on `EggUnfertBase`, carrying the market value of the fertilized
+egg (125) and the same near-white tint, so the pair reads as one animal's eggs. It is the only def
+in this mod that is not Shooki's.
+
+**What this section used to claim, and should not have.** It said `CompEggLayer` throws whenever an
+animal lays without having been fertilized, quoting the call that builds the egg. The call is real;
+the certainty was not. The 1.6 port of Race to the Rim found that branch unreachable for animals
+whose `eggProgressUnfertilizedMax` sits below 1 — theirs was 0.5, and the teshi's is 0.9 — because
+progress stops short of a laying and `CanLayNow` never comes true. So a lone teshi may simply never
+lay, and the crash this section described may never have been possible for this animal. It has
+never been observed either way: the mod has not run. `TESTS.md`, scenario 4, is written to settle
+it, and separates the mated case from the lone one for exactly that reason.
 
 ### Nothing else
 
