@@ -19,3 +19,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---------------------------------------------------------------------------
+SCOPE OF THE ABOVE
+
+The notice above is the ORIGINAL AUTHOR'S. It is Mlie's MIT licence, taken from
+the repository of Creatures of Ki (Continued), which continues Shooki's mod:
+
+  https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020
+  https://github.com/emipa606/CreaturesOfKi
+
+It travels with this extraction because MIT requires it to, and because it is
+what grants the right to publish this mod at all. Shooki designed the teshi;
+Mlie carried the mod to 1.4.
+
+The teshi, its body, its items and its nine textures are theirs, taken as they
+were. The extraction and 1.6 port work - deciding what to take, migrating
+wildness from a race field to a stat, the unfertilised egg def, the French, the
+packaging and the documentation - is nelim's, and is offered under the same MIT
+terms as the notice above.
+
+ATTRIBUTION.md records what was taken, what was left behind and what was
+changed, file by file.
