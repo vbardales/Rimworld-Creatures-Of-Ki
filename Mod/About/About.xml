@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Creatures of Ki - Teshi 1.6</name>
+  <name>Creatures of Ki - Teshi Renew</name>
   <author>Shooki, Mlie - 1.6 port: nelim</author>
-  <packageId>nelim.creaturesofki</packageId>
+  <packageId>nelim.creaturesofkirenew</packageId>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <url>https://github.com/vbardales/Rimworld-Creatures-Of-Ki</url>
+  <url>https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew</url>
   <description>The teshi from Shooki's Creatures of Ki, brought forward to RimWorld 1.6. An animal from the forest planet Ki, and its eggs.
 
 I am not the author of this mod. The design, the textures and the original idea are Shooki's, and the 1.0 to 1.4 continuation is Mlie's - all I did was the work needed to make the animal run on 1.6. Credit goes to them; mistakes in the update are mine. If either comes back to it, or asks me to take this down, I will.
@@ -32,7 +32,7 @@ No balance value was changed.
 
 Content mod: removing it mid-game will lose any teshi and any teshi eggs already in play.
 
-Source, changelog and the full list of what the port changed: https://github.com/vbardales/Rimworld-Creatures-Of-Ki
+Source, changelog and the full list of what the port changed: https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew
 
 Licensed MIT, like the original. The update work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Shooki for the animal and to Mlie for keeping it alive to 1.4.
 

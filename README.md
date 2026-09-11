@@ -1,4 +1,4 @@
-# Creatures of Ki — Teshi 1.6
+# Creatures of Ki — Teshi Renew
 
 The teshi from Shooki's **Creatures of Ki**, brought forward to RimWorld 1.6.
 

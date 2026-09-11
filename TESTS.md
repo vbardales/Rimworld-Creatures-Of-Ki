@@ -1,4 +1,4 @@
-# Creatures of Ki — Teshi: what to check in game
+# Creatures of Ki — Teshi Renew: what to check in game
 
 Four static validators pass on this mod: `Check-DefRefs`, `Check-XmlClasses`, `Check-XmlFields`
 and `Check-TypeRefs`. None of them can load the game. Everything below is what they cannot see.
@@ -6,7 +6,7 @@ and `Check-TypeRefs`. None of them can load the game. Everything below is what t
 The mod has never run. Run these in order: the first one is cheap and catches anything fatal, the
 fourth is the only one that can crash a save.
 
-Junction it into `RimWorld/Mods` first — pointing at `CreaturesOfKi/Mod`, not at the repository
+Junction it into `RimWorld/Mods` first — pointing at `CreaturesOfKiRenew/Mod`, not at the repository
 root. Play with dev mode on, and keep `Player.log` after the session:
 
 ```
@@ -19,7 +19,7 @@ C:\Users\nelim\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player
 
 Enable the mod alone, with Core and nothing else. It needs no DLC and no Harmony.
 
-**Expect:** `Creatures of Ki - Teshi 1.6` in the mod list, its icon beside it, its showcase on the
+**Expect:** `Creatures of Ki - Teshi Renew` in the mod list, its icon beside it, its showcase on the
 mod page. No red text at startup.
 
 **Fails if:** any `XML error` or `Could not resolve cross-reference` naming `Teshi`,
