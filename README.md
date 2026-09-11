@@ -55,10 +55,11 @@ Two breakages, both silent in different ways.
   `EggTeshiUnfertilized` was written, taking the market value of its fertilized counterpart.
 
   This entry used to say that `CompEggLayer` throws whenever an animal lays unfertilized, making
-  the def mandatory. That went further than the evidence: for animals whose
-  `eggProgressUnfertilizedMax` is below 1 — the teshi's is 0.9, inherited untouched — progress
-  stops short and the animal may never lay unmated at all. Unconfirmed in either direction, since
-  the mod has not yet run. See `TESTS.md`, scenario 4.
+  the def mandatory. That went further than the evidence, and the evidence is now in: while an
+  animal is unfertilized, `CompTick` pins `eggProgress` to `eggProgressUnfertilizedMax`, and
+  `CanLayNow` wants a full 1. The teshi's setting is 0.9, inherited untouched, so a lone female
+  never lays at all and that crash was never possible for her. Read off the compiled game by
+  `_tools/Run-Functional-Tests.ps1`; the play-through in `TESTS.md`, scenario 4, confirms it.
 
 No balance value was changed. Nothing else in the teshi's defs needed touching: no `deathAction`,
 no toxic sensitivity, no C#.
@@ -68,6 +69,21 @@ no toxic sensitivity, no C#.
 Every def reference and every `ParentName` resolves against **Core alone**, so no DLC is required,
 and each reference points at the right *type* of def. Checked with the repository's two validators
 before release.
+
+Beyond that, in three layers:
+
+```bash
+powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
+```
+
+Seventeen tests, a few seconds, no game launch. It does not simulate RimWorld — it reads the
+compiled game: the fields these defs write are checked against the methods that still read them,
+and the two changes this port made are checked against the code that made them necessary. Sixteen
+of the seventeen have been watched failing against a deliberately broken copy of the mod; the
+seventeenth can only go red if RimWorld itself changes, and the file says so.
+
+`TESTS.md` is the layer no reflection reaches: seven scenarios to play, for everything that has to
+be *seen* — the animal drawn from four sides, an egg hatching, a corpse drying out.
 
 ## Terms
 

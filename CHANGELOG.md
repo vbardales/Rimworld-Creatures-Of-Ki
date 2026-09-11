@@ -21,11 +21,12 @@ through 1.4.
   be but unfertilized. The new def carries the fertilized egg's market value.
 
   An earlier wording of this entry said `CompEggLayer` throws whenever an animal lays without
-  having been fertilized. That was stated too absolutely. The 1.6 port of Race to the Rim found
-  the unfertilized branch unreachable for animals whose `eggProgressUnfertilizedMax` sits below 1,
-  and the teshi's is 0.9 — inherited from upstream, not set here. Whether a null field would
-  actually have crashed this particular animal is therefore unconfirmed; `TESTS.md`, scenario 4,
-  is written to settle it. The def is right either way. Only the reason given for it was overstated.
+  having been fertilized. That was stated too absolutely, and the point is now settled, read off
+  the compiled game by `_tools/Run-Functional-Tests.ps1`: while an animal is unfertilized,
+  `CompTick` writes `eggProgressUnfertilizedMax` straight into `eggProgress`, and `CanLayNow`
+  requires a full 1. The teshi's setting is 0.9, inherited from upstream and not set here, so a
+  lone female is pinned below the threshold and never lays at all. The crash described was
+  therefore never possible for her. The def is needed all the same, for the mated case above.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed

@@ -80,10 +80,14 @@ in this mod that is not Shooki's.
 animal lays without having been fertilized, quoting the call that builds the egg. The call is real;
 the certainty was not. The 1.6 port of Race to the Rim found that branch unreachable for animals
 whose `eggProgressUnfertilizedMax` sits below 1 — theirs was 0.5, and the teshi's is 0.9 — because
-progress stops short of a laying and `CanLayNow` never comes true. So a lone teshi may simply never
-lay, and the crash this section described may never have been possible for this animal. It has
-never been observed either way: the mod has not run. `TESTS.md`, scenario 4, is written to settle
-it, and separates the mated case from the lone one for exactly that reason.
+progress stops short of a laying and `CanLayNow` never comes true.
+
+That is now confirmed rather than suspected, and from the game itself: `_tools/Run-Functional-Tests.ps1`
+reads `CompEggLayer.CompTick` writing `eggProgressUnfertilizedMax` into `eggProgress` while the
+animal is unfertilized, and `CanLayNow` requiring a full 1. Pinned at 0.9, a lone teshi never lays,
+so the crash this section once described was never possible for her. The def stays, and `TESTS.md`
+scenario 4a is where it earns its place: a mated female lays two eggs with one fertilization
+available, and the second has nothing to be but unfertilized.
 
 ### Nothing else
 

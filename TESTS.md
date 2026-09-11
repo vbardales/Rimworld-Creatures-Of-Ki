@@ -3,6 +3,11 @@
 Four static validators pass on this mod: `Check-DefRefs`, `Check-XmlClasses`, `Check-XmlFields`
 and `Check-TypeRefs`. None of them can load the game. Everything below is what they cannot see.
 
+`_tools/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
+reads the compiled game and answers seventeen questions this document used to have to ask of a
+play session — including the one scenario 4b was written to settle, which is now settled below.
+Run it first; it takes seconds and it costs nothing.
+
 The mod has never run. Run these in order: the first one is cheap and catches anything fatal, the
 fourth is the only one that can crash a save.
 
@@ -55,9 +60,8 @@ animals-4 pawn means the stat did not take.
 
 ## 4. The unfertilized egg — the only crash risk
 
-This is the second port change, and the reason `EggTeshiUnfertilized` was written. It is also the
-one claim in this mod's documents that has never been confirmed, so this scenario is written to
-settle it rather than to assume it.
+This is the second port change, and the reason `EggTeshiUnfertilized` was written. The claim that
+justified it has since been read off the game rather than assumed: see 4b, which is now answered.
 
 The teshi's comp reads:
 
@@ -87,13 +91,24 @@ is not being found.
 
 Tame a single female, no male anywhere on the map, and advance her cycle the same way.
 
-**Expect — and this is the open question:** either she lays an unfertilized egg, or her progress
-stops at 90 % and she never lays at all. `eggProgressUnfertilizedMax` is 0.9, so the second is
-likely. Write down which one happens.
+**Expect: nothing, ever.** She never lays. This was the open question of this document and it is
+now answered, not by playing but by reading the compiled game, in `CompEggLayer`:
 
-Whichever it is, note it: if she never lays unmated, then this mod's documents are wrong about
-*why* the def was needed, though 4a shows it is still needed. The correction is already written
-into the CHANGELOG as an open question; this scenario closes it.
+- `CompTick` accumulates `eggProgress`, and while the animal is unfertilized it writes
+  `eggProgressUnfertilizedMax` straight into that field — progress is *pinned* to the setting, not
+  merely compared against it. The teshi's setting is 0.9.
+- `CanLayNow` requires a full `1` of `eggProgress`.
+
+Pinned at 0.9 and needing 1, she is stopped for good. The inspect string should say so: the comp
+has a `ProgressStoppedBecauseUnfertilized` state for exactly this case.
+
+So this scenario is now a confirmation rather than an experiment. **Fails if** she lays anything
+at all — that would mean the reading above is wrong, and `Run-Functional-Tests.ps1` should have
+caught it first.
+
+What that settles about the def: the crash this mod's documents once described was indeed not
+possible for a lone teshi. The def is still needed, and 4a is where it earns its place — a mated
+female lays two eggs with one fertilization, and the second has nothing to be but unfertilized.
 
 ## 5. The egg hatches
 
