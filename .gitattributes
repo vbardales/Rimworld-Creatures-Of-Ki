@@ -1,0 +1,12 @@
+# Normalise line endings in this repository, while each machine keeps its own.
+# The monorepo this mod was developed in had its own copy; nothing carried it
+# across at the detachment, so this one exists for the repository itself.
+
+* text=auto
+
+*.xml   text
+*.md    text
+*.txt   text
+
+*.png binary
+*.psd binary
