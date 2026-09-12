@@ -1,14 +1,14 @@
 ---
-mod:         Creatures of Ki - Teshi Renew
-packageId:   nelim.creaturesofkirenew
-repo:        Rimworld-Creatures-Of-Ki-Renew
-visibility:  public
-detached:    yes
-stage:       done
-licence:     open
-licence_at:  Mlie's upstream repository, MIT, copyright 2020
-dependencies:none
-showcase:    complete
+mod:          Creatures of Ki - Teshi Renew
+packageId:    nelim.creaturesofkirenew
+repo:         Rimworld-Creatures-Of-Ki-Renew
+visibility:   public
+detached:     yes
+stage:        done
+licence:      open
+licence_at:   Mlie's upstream repository, MIT, copyright 2020
+dependencies: none
+showcase:     complete
 tested_on:
 workshop:
 remaining:
@@ -17,8 +17,8 @@ remaining:
     its four faces, an egg that hatches, and the dessicated sprite borrowed from the dromedary, which
     the game does not ship in the clear. TESTS.md scenarios 2, 5 and 6.
   - feature: the showcase is engraved in black, from before the 2026-09-12 rule on the coloured veil
-session:     local_6b828864-4bf7-4de6-91d5-29f775dc13a6
-updated:     2026-09-12, kept by the thread that holds this mod
+session:      local_6b828864-4bf7-4de6-91d5-29f775dc13a6
+updated:      2026-09-12, kept by the thread that holds this mod
 ---
 
 # Creatures of Ki - Teshi Renew — status
