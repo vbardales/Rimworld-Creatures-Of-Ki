@@ -17,7 +17,7 @@ reste:
     livre pas en clair. TESTS.md scenarios 2, 5 et 6.
   - feature: la vitrine est gravee en noir, d'avant la consigne du 2026-09-12 sur le voile en couleur
 session:    local_6b828864-4bf7-4de6-91d5-29f775dc13a6
-maj:        2026-09-12, releve automatique, puis precise par la session du mod
+maj:        2026-09-12, tenue par la session du mod
 ---
 
 # Creatures of Ki - Teshi Renew — etat
@@ -25,15 +25,17 @@ maj:        2026-09-12, releve automatique, puis precise par la session du mod
 Fiche d'etat, lue par une passe sur tous les mods plutot qu'en interrogeant les fils un a un.
 Elle vit a la racine, jamais dans `Mod/`, donc Steam ne la recoit pas.
 
-Les champs ci-dessus ont ete deduits du disque le 2026-09-12. Trois ne peuvent pas l'etre et
-attendent la session qui tient ce mod :
+**Tenue a jour par la session qui tient ce mod**, consigne du 2026-09-12, et non plus seulement
+par la passe automatique. Elle se met a jour au moment ou l'etat change, pas a la demande : un
+essai en jeu remplit `teste_le`, une dette reglee sort de `reste`, une publication remplit
+`workshop`. Les trois champs qu'aucune passe ne peut deduire :
 
-- **`etape`** — pre-rempli depuis le groupe de session quand il existe, a confirmer.
-- **`teste_le`** — la date du dernier essai en jeu. Vide veut dire jamais.
+- **`etape`** — l'etat de chantier. Il doit dire la meme chose que le groupe de session, verifie
+  le 2026-09-12 : `Rimworld - done`. Si les deux divergent, c'est le groupe qui a raison.
+- **`teste_le`** — la date du dernier essai en jeu. Vide veut dire jamais, et c'est le cas ici.
 - **`reste`** — ce qu'il reste a faire, en trois categories : `feature` pour une
   fonctionnalite manquante au premier jet, `defaut` pour un defaut connu non corrige,
-  `non_verifie` pour ce qui n'a pas pu etre verifie. La ligne posee d'office dit le vrai
-  pour presque tout le depot ; la remplacer des qu'elle cesse de l'etre.
+  `non_verifie` pour ce qui n'a pas pu etre verifie.
 
 Vocabulaire de `licence` : `open` licence explicite, `silent` aucune licence et source morte,
 `alive` aucune licence mais source vivante, `forbidden` refus ecrit, `original` rien de repris.
