@@ -1,13 +1,14 @@
 ---
-mod:        Creatures of Ki - Teshi Renew
-packageId:  nelim.creaturesofkirenew
-repo:       Rimworld-Creatures-Of-Ki-Renew
-visibility: public
-detached:   yes
-stage:      done
-licence:    open
-licence_at: Mlie's upstream repository, MIT, copyright 2020
-showcase:   complete
+mod:         Creatures of Ki - Teshi Renew
+packageId:   nelim.creaturesofkirenew
+repo:        Rimworld-Creatures-Of-Ki-Renew
+visibility:  public
+detached:    yes
+stage:       done
+licence:     open
+licence_at:  Mlie's upstream repository, MIT, copyright 2020
+dependencies:none
+showcase:    complete
 tested_on:
 workshop:
 remaining:
@@ -16,8 +17,8 @@ remaining:
     its four faces, an egg that hatches, and the dessicated sprite borrowed from the dromedary, which
     the game does not ship in the clear. TESTS.md scenarios 2, 5 and 6.
   - feature: the showcase is engraved in black, from before the 2026-09-12 rule on the coloured veil
-session:    local_6b828864-4bf7-4de6-91d5-29f775dc13a6
-updated:    2026-09-12, kept by the thread that holds this mod
+session:     local_6b828864-4bf7-4de6-91d5-29f775dc13a6
+updated:     2026-09-12, kept by the thread that holds this mod
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -30,12 +31,16 @@ It moves when the state moves, not when someone asks: a run in game fills `teste
 leaves `remaining`, a published item fills `workshop`, and `updated` follows. The three fields no
 pass can deduce from the disk:
 
-- **`stage`** — where the work stands. It has to say the same thing as this mod's session group,
-  checked on 2026-09-12: `Rimworld - done`. If the two ever disagree, the group is right, since
-  that is the one set by hand. The other values that group takes are `Rimworld - preTest`, ready to
-  be tried in game; `Rimworld - ModIcon genere`, the showcase is made; `Rimworld - dans monorepo`,
-  not detached yet; and `Rimworld - hors mono`, detached with a clean repository.
+- **`stage`** — where the work stands, one of: empty, `port`, `showcase`, `preTest`, `done`,
+  `tested`, `published`. It is `done` here, and `done` means the work is finished, not that the mod
+  is out: this one is on no Workshop item and has never run. The mod's session group carries the
+  same state by hand, and it reads `Rimworld - done`; if the two ever disagree, the group is right.
 - **`tested_on`** — the date of the last run in game. Empty means never, which is the case here.
+- **`dependencies`** — `declared` when every mod this one needs is named in the About's
+  `modDependencies`, `to check` when a non-vanilla `loadAfter` suggests a dependency that is not
+  declared, `none` when the mod needs nothing. An undeclared dependency is not cosmetic: on
+  2026-09-11 Reequilibrage animaux took 47 vanilla animals down with it, Muffalo included, because
+  the class it injects belongs to a mod that was not declared and not loaded.
 - **`remaining`** — what is left to do, in three kinds: `feature` for something the first pass did
   not cover, `defect` for a known fault left standing, `unverified` for what could not be checked.
   The line every mod in the repository starts with is "never seen running in game"; narrow it as
