@@ -92,9 +92,15 @@ function Section([string]$name) { Write-Output ''; Write-Output $name }
 # and a test written as "there is no field called wildness" reports a pass it never earned. That
 # happened while writing this file, which is why the type count is asserted before anything else.
 
+# The handler outlives the script unless it is taken back off, and once the script scope is gone
+# every variable it reads comes back null: the host session then answers each later resolution
+# with a page of errors from these four lines. It is removed at the end of the run, and the guard
+# below covers the run that ends by throwing before it gets there.
+
 $script:probed = @{}
 $script:asmResolver = [System.ResolveEventHandler]{
     param($sender, $e)
+    if (-not $script:probed -or -not $Managed) { return $null }
     $short = $e.Name.Split(',')[0]
     if ($script:probed.ContainsKey($short)) { return $null }
     $script:probed[$short] = $true
@@ -612,6 +618,7 @@ It 'the food types it eats are flags the game defines' {
 # =============================================================================================
 Write-Output ''
 Write-Output "$($script:ran) tests, $($script:failed) failed"
+[System.AppDomain]::CurrentDomain.remove_AssemblyResolve($script:asmResolver)
 if ($script:failed -gt 0) { exit 1 }
 exit 0
 
