@@ -16,7 +16,7 @@ remaining:
     17 out-of-game tests: what remains is the three things no reflection reaches - the animal drawn on
     its four faces, an egg that hatches, and the dessicated sprite borrowed from the dromedary, which
     the game does not ship in the clear. TESTS.md scenarios 2, 5 and 6.
-session:      local_6b828864-4bf7-4de6-91d5-29f775dc13a6
+session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
 updated:      2026-09-12, kept by the thread that holds this mod
 ---
 
