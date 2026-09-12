@@ -46,5 +46,6 @@ pass can deduce from the disk:
   The line every mod in the repository starts with is "never seen running in game"; narrow it as
   soon as something covers part of it, rather than leaving it whole.
 
-`licence` reads: `open` an explicit licence, `silent` no licence and a dead source, `alive` no
-licence but a living source, `forbidden` a written refusal, `original` nothing taken from anyone.
+`licence` reads: `open` an explicit licence, `silent` no licence and a dead source,
+`alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing
+to anyone — not a name, not an idea traceable to one mod, not a value derived from its assets.
