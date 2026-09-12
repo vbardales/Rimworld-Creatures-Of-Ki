@@ -67,8 +67,7 @@ no toxic sensitivity, no C#.
 ## Verification
 
 Every def reference and every `ParentName` resolves against **Core alone**, so no DLC is required,
-and each reference points at the right *type* of def. Checked with the repository's two validators
-before release.
+and each reference points at the right *type* of def. Checked with the standalone suite against installed Core data.
 
 Beyond that, in three layers:
 
@@ -76,10 +75,9 @@ Beyond that, in three layers:
 powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
 ```
 
-Seventeen tests, a few seconds, no game launch. It does not simulate RimWorld — it reads the
+Twenty tests, no game launch. It does not simulate RimWorld — it reads the
 compiled game: the fields these defs write are checked against the methods that still read them,
-and the two changes this port made are checked against the code that made them necessary. Sixteen
-of the seventeen have been watched failing against a deliberately broken copy of the mod; the
+and the two changes this port made are checked against the code that made them necessary. Sixteen of the original seventeen have been watched failing against a deliberately broken copy of the mod; the
 seventeenth can only go red if RimWorld itself changes, and the file says so.
 
 `TESTS.md` is the layer no reflection reaches: seven scenarios to play, for everything that has to

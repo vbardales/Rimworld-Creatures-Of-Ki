@@ -1,0 +1,124 @@
+{
+  "date": "2026-09-12",
+  "dimensions": [
+    896,
+    504
+  ],
+  "version": "1.6",
+  "fonts": {
+    "h1 .primary": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 9
+      }
+    ],
+    "h1 .suffix": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 5
+      }
+    ],
+    "p": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI",
+        "isCustomFont": false,
+        "glyphCount": 48
+      }
+    ],
+    ".version": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI-Bold",
+        "isCustomFont": false,
+        "glyphCount": 3
+      }
+    ]
+  },
+  "regions": [
+    {
+      "text": "Creatures",
+      "x": 50,
+      "y": 48,
+      "width": 198,
+      "height": 62,
+      "color": "rgb(242, 236, 225)",
+      "worstContrast": 8.33,
+      "worstPoint": [
+        225,
+        55
+      ]
+    },
+    {
+      "text": "of",
+      "x": 260.65625,
+      "y": 66,
+      "width": 27.671875,
+      "height": 40,
+      "color": "rgb(242, 236, 225)",
+      "worstContrast": 8.56,
+      "worstPoint": [
+        283,
+        77
+      ]
+    },
+    {
+      "text": "Ki -",
+      "x": 300.984375,
+      "y": 48,
+      "width": 71.25,
+      "height": 62,
+      "color": "rgb(242, 236, 225)",
+      "worstContrast": 8.56,
+      "worstPoint": [
+        343,
+        51
+      ]
+    },
+    {
+      "text": "Teshi",
+      "x": 50,
+      "y": 98.59375,
+      "width": 103.984375,
+      "height": 62,
+      "color": "rgb(242, 236, 225)",
+      "worstContrast": 8.59,
+      "worstPoint": [
+        71,
+        99
+      ]
+    },
+    {
+      "text": "Renew",
+      "x": 166.640625,
+      "y": 116.59375,
+      "width": 89.65625,
+      "height": 40,
+      "color": "rgb(233, 189, 130)",
+      "worstContrast": 5.8,
+      "worstPoint": [
+        203,
+        119
+      ]
+    },
+    {
+      "text": "The teshi of the forest planet Ki, and its eggs.",
+      "x": 50,
+      "y": 194.1875,
+      "width": 430,
+      "height": 30.4375,
+      "color": "rgb(242, 236, 225)",
+      "worstContrast": 5.67,
+      "worstPoint": [
+        470,
+        216
+      ]
+    }
+  ],
+  "badgeContrast": 8.8,
+  "method": "All background pixels within each text bounding rectangle, text hidden; conservative minimum. Badge uses its opaque fill."
+}

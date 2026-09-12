@@ -1,10 +1,9 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-Four static validators pass on this mod: `Check-DefRefs`, `Check-XmlClasses`, `Check-XmlFields`
-and `Check-TypeRefs`. None of them can load the game. Everything below is what they cannot see.
+The standalone suite `_tools/Run-Functional-Tests.ps1` provides 20 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
 
 `_tools/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
-reads the compiled game and answers seventeen questions this document used to have to ask of a
+reads the compiled game and runs twenty checks this document used to have to ask of a
 play session — including the one scenario 4b was written to settle, which is now settled below.
 Run it first; it takes seconds and it costs nothing.
 
@@ -37,7 +36,7 @@ Dev mode → *Spawn pawn* → teshi. Spawn several so both sexes and both life s
 them with *Dev: set age*.
 
 **Expect:** four wide banded ears, a dark crest, a round low body. The female reads greyer, the kit
-is the same drawing at a smaller size. Rotate the camera through all four facings.
+is the same drawing at a smaller size. Move the animals in each of the four cardinal directions and inspect their facing.
 
 **Fails if:** a pink or white box appears for any facing, sex or stage. There are nine textures and
 no north-facing kit or female-north beyond the three supplied; a missing one shows as pink.
@@ -55,8 +54,7 @@ Select a wild teshi → **Information** tab → find *Wildness*.
 **Fails if:** it shows a negative value, 0 %, or nothing. The visible symptom is that taming
 succeeds almost immediately, on an animal that should be as hard to tame as a bear.
 
-Cross-check: order a taming job and watch the success chance. A teshi tamed on the first try by an
-animals-4 pawn means the stat did not take.
+Cross-check: order a taming job and watch the success chance. A first-attempt success is random and does not prove a defect; check the displayed Wildness value.
 
 ## 4. The unfertilized egg — the only crash risk
 
@@ -143,5 +141,4 @@ Nothing in the port touched these, so this is a regression check rather than a v
 
 ## What to send back
 
-The `Player.log` from the session, plus one line per scenario saying what happened — particularly
-**4b**, which is the only one whose answer is not already known.
+The `Player.log` from the session, plus one line per scenario saying what happened — including game version and mod list. All seven scenarios still require an actual game session.

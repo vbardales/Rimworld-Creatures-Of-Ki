@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Creatures of Ki - Teshi Renew preview</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 896px; height: 504px; overflow: hidden; }
+body { font-family: "Segoe UI", system-ui, sans-serif; }
+.frame { position: relative; width: 896px; height: 504px; overflow: hidden;
+  background: url('Preview.png') 0 0 / 896px auto no-repeat; }
+.veil { position: absolute; inset: 0; background: var(--gradient); }
+.text { position: absolute; left: var(--left); top: var(--top);
+  color: var(--inkPrimary); text-shadow: 0 3px 10px rgba(0,0,0,.75); }
+h1 { font-size: var(--titleSize); font-weight: 600; line-height: 1.1; letter-spacing: 0; }
+h1 .link, h1 .suffix { font-size: .65em; }
+h1 .suffix { color: var(--inkSecondary); }
+.rule { width: 58px; height: 3px; background: var(--accent); margin: 20px 0 16px; }
+p { width: 430px; font-size: 21px; font-weight: 400; line-height: 1.45; }
+.badge { position: absolute; right: 0; top: 0; width: 80px; height: 80px;
+  background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 100%); }
+.version { position: absolute; left: 869px; top: 27px; color: var(--badgeInk);
+  font-size: 26px; font-weight: 700; line-height: 1; transform: translate(-50%,-50%) rotate(45deg); }
+</style>
+<main class="frame">
+  <div class="veil"></div>
+  <div class="text">
+    <h1><span class="primary">Creatures</span> <span class="link primary">of</span> <span class="primary">Ki -</span><br><span class="primary">Teshi</span> <span class="suffix">Renew</span></h1>
+    <div class="rule"></div>
+    <p></p>
+  </div>
+  <div class="badge"></div><div class="version"></div>
+</main>
+<script>
+window.previewReady = (async () => {
+  const [palette, layout] = await Promise.all([
+    fetch('preview-palette.json').then(r => r.json()),
+    fetch('preview-layout.json').then(r => r.json())
+  ]);
+  for (const [k,v] of Object.entries(palette)) document.documentElement.style.setProperty('--'+k,v);
+  for (const k of ['left','top','titleSize']) document.documentElement.style.setProperty('--'+k,layout[k]+'px');
+  const rgb = palette.veil.match(/[0-9a-f]{2}/gi).map(h=>parseInt(h,16)).join(',');
+  document.documentElement.style.setProperty('--gradient',`radial-gradient(ellipse ${layout.veilRadiusX}px ${layout.veilRadiusY}px at top left, rgba(${rgb},${layout.veilStartAlpha}) 0%, rgba(${rgb},${layout.veilHoldAlpha}) ${layout.veilHoldPercent}%, rgba(${rgb},0) 100%)`);
+  document.querySelector('p').textContent = layout.summary;
+  document.querySelector('.version').textContent = layout.version;
+  await document.fonts.ready;
+  const img = new Image(); img.src='Preview.png'; await img.decode();
+})();
+</script>
+</html>

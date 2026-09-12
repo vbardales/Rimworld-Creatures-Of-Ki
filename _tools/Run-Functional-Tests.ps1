@@ -289,7 +289,7 @@ function Show-Some($names) {
 
 $vanillaNamed = @{}
 $vanillaAbstract = @{}
-foreach ($dir in (Get-ChildItem $GameData -Directory)) {
+foreach ($dir in @(Get-Item (Join-Path $GameData 'Core'))) {
     $defsRoot = Join-Path $dir.FullName 'Defs'
     if (-not (Test-Path $defsRoot)) { continue }
     foreach ($f in Get-ChildItem $defsRoot -Recurse -Filter *.xml) {
@@ -321,7 +321,7 @@ Section 'The harness itself'
 It 'the game and its data are actually loaded' {
     if ($allTypes.Count -lt 10000)      { "Assembly-CSharp gave $($allTypes.Count) types; expected some sixteen thousand. Every lookup below would return null and pass." }
     if (-not $byName['RaceProperties']) { 'RaceProperties not found: the type table is empty, or the game moved it.' }
-    if ($vanillaNamed.Count -lt 5000)   { "Data gave $($vanillaNamed.Count) defs; expected thousands. Check -GameData." }
+    if ($vanillaNamed.Count -lt 1000)   { "Core gave $($vanillaNamed.Count) defs; expected thousands. Check -GameData." }
     if ($written.Count -lt 40)          { "only $($written.Count) written fields were resolved; the walk over the defs is broken." }
     foreach ($pair in @(
         ,@('the animal',           $teshiNode)
@@ -334,6 +334,41 @@ It 'the game and its data are actually loaded' {
 }
 
 # =============================================================================================
+Section 'XML and packaging'
+
+It 'all shipped XML parses and About identifies this standalone mod' {
+    foreach ($file in Get-ChildItem $modDir -Recurse -Filter *.xml) {
+        $doc = New-Object System.Xml.XmlDocument
+        $doc.Load($file.FullName)
+    }
+    $about = New-Object System.Xml.XmlDocument
+    $about.Load((Join-Path $modDir 'About/About.xml'))
+    if ($about.ModMetaData.packageId -cne 'nelim.creaturesofkirenew') { 'unexpected packageId' }
+    $url = 'https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew'
+    if ($about.ModMetaData.url -cne $url -or -not $about.ModMetaData.description.Contains($url)) { 'GitHub URL missing or inconsistent' }
+    if ((Get-FileHash (Join-Path $ModRoot 'LICENSE')).Hash -ne (Get-FileHash (Join-Path $modDir 'LICENSE')).Hash) { 'distributed license differs from repository license' }
+}
+
+It 'XML classes and explicit graphics types exist in the game' {
+    foreach ($def in $defNodes) {
+        foreach ($node in $def.SelectNodes('.//*[@Class] | .//graphicClass')) {
+            $name = if ($node.HasAttribute('Class')) { $node.GetAttribute('Class') } else { $node.InnerText.Trim() }
+            if (-not $byName.ContainsKey($name)) { "unknown XML class: $name" }
+        }
+    }
+}
+
+It 'body parts and stat keys resolve against Core alone' {
+    foreach ($node in $bodyNode.SelectNodes('.//def')) {
+        if (-not (Has-Vanilla 'BodyPartDef' $node.InnerText.Trim())) { "unknown body part: $($node.InnerText)" }
+    }
+    foreach ($def in $defNodes) {
+        foreach ($node in $def.SelectNodes('statBases/*')) {
+            if (-not (Has-Vanilla 'StatDef' $node.LocalName)) { "unknown stat: $($node.LocalName)" }
+        }
+    }
+}
+
 Section "The port's two changes, read off the game"
 # =============================================================================================
 
