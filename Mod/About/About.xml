@@ -15,7 +15,7 @@ Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020
 
 What it adds
 
-- The teshi: a round, heavy, low-sitting animal with four wide banded ears and a short dark crest - the bulk of a bear on the build of a giant chinchilla. Its own description calls it a bipedal feathered predator, which the artwork disagrees with, but a predator it is: claws, a bite worth 25 damage, and it turns manhunter three times in four when harmed. Trainable to intermediate. It nuzzles. It lays eggs, and it lives eighty years.
+- The teshi: a large, bipedal feathered predator with four wide banded ears, a short dark crest and a thick banded tail. The showcase depicts it resting, a pose consistent with its bipedal anatomy. It has claws, a bite worth 25 damage, and it turns manhunter three times in four when harmed. Trainable to intermediate. It nuzzles. It lays eggs, and it lives eighty years.
 - Teshi eggs, fertilized and unfertilized. Fifteen days to hatch.
 - Found in shrubland, forest, rainforest, boreal forest and tundra, sparsely, and almost never on ice or desert.
 
@@ -32,11 +32,13 @@ No balance value was changed.
 
 Content mod: removing it mid-game will lose any teshi and any teshi eggs already in play.
 
-Source, changelog and the full list of what the port changed: https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew
+The source repository includes the changelog and the full list of changes.
 
 Licensed MIT, like the original. The update work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Shooki for the animal and to Mlie for keeping it alive to 1.4.
 
-If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+[url=https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew]Source code on GitHub[/url]</description>
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>Ludeon.RimWorld.Royalty</li>

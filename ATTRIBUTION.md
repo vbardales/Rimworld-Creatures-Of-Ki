@@ -17,7 +17,8 @@ mod, which is what MIT asks in exchange for redistribution.
 
 ## What was taken
 
-Four def files and nine textures, out of a mod whose other four fifths are a playable race.
+Three def files and nine textures were taken from the original; a fourth def file
+was added for the unfertilized egg. The playable race was excluded.
 
 | File | Origin |
 |---|---|
@@ -70,7 +71,7 @@ untouched:
 ```
 
 Two eggs a laying, one fertilization available. The second egg of a laying has nothing to be but
-unfertilized, whether or not the female ever met a male.
+unfertilized in a mated laying. A lone unfertilized female never reaches the laying threshold.
 
 `EggTeshiUnfertilized` is a new def on `EggUnfertBase`, carrying the market value of the fertilized
 egg (125) and the same near-white tint, so the pair reads as one animal's eggs. It is the only def
@@ -103,8 +104,18 @@ replacement would make this a rewrite rather than an update.
 
 ## Verification
 
-Two scripts check the mod before release: every def reference and every `ParentName` resolves
-against **Core alone**, so no DLC is required, and each reference points at the right *type* of def
-(`race` → ThingDef, `body` → BodyDef, and so on). What they cannot see is field-name validity —
-they check references between defs, not whether a field still exists. That is exactly how the
-wildness breakage slipped past several mods, and it is only caught by loading the game.
+The standalone `_tools/Run-Functional-Tests.ps1` suite provides 20 automated checks,
+including XML parsing, Core references and inheritance, field existence and readers,
+egg behavior constraints, body coverage and texture paths. It uses installed Core data
+and reflection/IL inspection of RimWorld 1.6 assemblies. It does not launch or simulate
+the game. The successful run and its exact scope are recorded in `STATUS.md`.
+
+`TESTS.md` describes the remaining in-game validation, including rendering, laying,
+hatching and the dessicated corpse. Those scenarios have not yet been executed.
+
+## Showcase artwork
+
+The showcase icon is AI-generated artwork, separate from the nine inherited animal
+textures. On 2026-09-13, the built-in OpenAI image tool edited it to remove luminous
+rings and sparkles while preserving the orange winking mascot. The previous icon,
+new source and edit prompt are retained under `Art/`.

@@ -14,6 +14,7 @@ through 1.4.
 ### Added
 
 - Support for RimWorld 1.6.
+- Complete French DefInjected coverage for the teshi, eggs, young animal, attacks and custom body-part labels.
 - `EggTeshiUnfertilized`. The mod declared only its fertilized egg. Every egg-layer in Core
   declares both, without exception — chicken, duck, goose, turkey, ostrich, emu, cassowary, cobra,
   tortoise and iguana — and the teshi lays two eggs at a time with only one fertilization available
@@ -30,6 +31,9 @@ through 1.4.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed
+
+- Simplified the showcase icon to remove glow and orbital sparkles.
+- Corrected the showcase anatomy description, verification documentation and final GitHub source link.
 
 - **`wildness` moved to `<Wildness>` under `statBases`.** It stopped being a field of
   `RaceProperties` in 1.6 and became a StatDef. The old form is not an error, it is simply not

@@ -1,0 +1,102 @@
+[
+  {
+    "path": "Mod/About/About.xml",
+    "bytes": 3200,
+    "sha256": "0966CD58D2375305A88EF68301EAA055B564EEC0F796D8AB188C27720E5B2C86"
+  },
+  {
+    "path": "Mod/About/ModIcon.png",
+    "bytes": 28517,
+    "sha256": "662238380FF3A04B35939392D3A7685879D57E3839ED44AA25AFAB2F42E7532A"
+  },
+  {
+    "path": "Mod/About/Preview.png",
+    "bytes": 665299,
+    "sha256": "13380E82C5082E0F7ACB5BE1C07667A5FB924CF319CDA8AF29B57783A921415E"
+  },
+  {
+    "path": "Mod/Defs/Bodies/Bodies_Animal_Teshi.xml",
+    "bytes": 5918,
+    "sha256": "51380EF362AB29FAE56EF503555A117DE67DBAF63B29FC0ADB4FD048233AF185"
+  },
+  {
+    "path": "Mod/Defs/ThingDefs_Items/Items_Resource_Teshi.xml",
+    "bytes": 712,
+    "sha256": "A2F162DBDC9442EA93FA5B6F0C0107FC81A48FC6EC441B2066C553C8B5692AD0"
+  },
+  {
+    "path": "Mod/Defs/ThingDefs_Items/Items_TeshiEggUnfertilized.xml",
+    "bytes": 618,
+    "sha256": "029CCFAB1A32F3511DD1DAB276FDE21DD9F39198D61F79DD5E6EA6B5C9F8C743"
+  },
+  {
+    "path": "Mod/Defs/ThingDefs_Races/Races_Animal_Teshi.xml",
+    "bytes": 6151,
+    "sha256": "9433FF04EE08B6DAB4C668B37FCF17491869403119E94FDE341917CA7BAFB0A6"
+  },
+  {
+    "path": "Mod/Languages/French/DefInjected/BodyDef/Teshi.xml",
+    "bytes": 3388,
+    "sha256": "A8B525AC9D0506188AD74906F0C8D49682FD16ADBBDF461AC09B71FD46DED554"
+  },
+  {
+    "path": "Mod/Languages/French/DefInjected/PawnKindDef/Teshi.xml",
+    "bytes": 293,
+    "sha256": "A36CFCB63C866FBE1FBE9CF69725C0342E7A6B7B13C30A0C83C94A90EB1D6091"
+  },
+  {
+    "path": "Mod/Languages/French/DefInjected/ThingDef/Teshi.xml",
+    "bytes": 1027,
+    "sha256": "CE1921F87B679E63821DC5A8C75773C8D107B86C9CEE5729163DB809F2592A96"
+  },
+  {
+    "path": "Mod/LICENSE",
+    "bytes": 2071,
+    "sha256": "D2AA2F4AAE44377CF4563DC2F67365C28ABD3F33CCFE47402245EC6337837B8F"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_east.png",
+    "bytes": 33503,
+    "sha256": "6CC5901A004B133EE2D0F47A1172A7F1C43DDEB96AC35B977A4794E9BE74655D"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_female_east.png",
+    "bytes": 33625,
+    "sha256": "C86426B397EE0EAAED079D68432F9AB28396B47B7A672C9BAFEFE8773B843CC3"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_female_north.png",
+    "bytes": 37651,
+    "sha256": "433A274339F3ED243292E756BC2FEBB500040A422D36A44A361E9AFF78CC89CA"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_female_south.png",
+    "bytes": 32632,
+    "sha256": "959DE95DE3B758968CA185D784D7307CE6A6F902C4AAB96CEF94CEB47DCB6A2F"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_kit_east.png",
+    "bytes": 31623,
+    "sha256": "1D1D49EB7F827D72B2A299AE97DDFDA69F564FF8CCB265755EF081B59A8FEB4D"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_kit_north.png",
+    "bytes": 34846,
+    "sha256": "9F473D40A37A61B198BC2A4F1DDB52FB4ECC2A33D3BC89B2BD8A36A767956BCB"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_kit_south.png",
+    "bytes": 29984,
+    "sha256": "C77E2AC948787DEE35EDB29E474E2A326EC654C58FB4E4F6CB6E46EBB802F42A"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_north.png",
+    "bytes": 36591,
+    "sha256": "76338DE5E1DBC226349D6E6580824CD7ECFAFAD5EA6AB64DC7596AD940FB89A4"
+  },
+  {
+    "path": "Mod/Textures/Things/Pawn/Animal/Teshi/Teshi_south.png",
+    "bytes": 31713,
+    "sha256": "3126CF8360E8A13C9F1D6910DED11148C1D40FA4D5BCDD4282225B321DB4B748"
+  }
+]

@@ -142,3 +142,10 @@ Nothing in the port touched these, so this is a regression check rather than a v
 ## What to send back
 
 The `Player.log` from the session, plus one line per scenario saying what happened — including game version and mod list. All seven scenarios still require an actual game session.
+
+## Translation display — English and French
+
+Unverified until performed in RimWorld 1.6. Repeat in both languages: inspect an adult
+and a baby teshi, both egg types, melee attack labels and all custom body-part labels in
+the health tab. Check the baby singular/plural, accents, raw keys, English fallback in
+French, formatting and clipping. Record results and Player.log evidence in STATUS.md.

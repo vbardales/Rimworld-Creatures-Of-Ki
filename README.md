@@ -17,11 +17,10 @@ It adds one animal and its eggs.
   25, a head bash at 12. Trainable to intermediate, it nuzzles, and it lives eighty years.
   Comfortable from −80 °C to 60 °C, which is to say anywhere.
 
-  Its own description calls it "a large, bipedal feathered predator", which will have you
-  picturing a raptor. The artwork is nothing of the sort: a round, heavy, low-sitting animal with
-  **four wide banded ears**, two a side, and a short dark crest — the bulk of a bear on the build
-  of a giant chinchilla. It is a predator all the same, and damaging one turns it manhunter three
-  times in four.
+  A large, bipedal feathered predator with **four wide banded ears**, two a side,
+  a short dark crest and a thick banded tail. The showcase depicts it resting;
+  that pose does not contradict its bipedal anatomy. Damaging one turns it manhunter
+  three times in four.
 - **Teshi eggs**, fertilized and unfertilized. One egg fertilized at a time, laid every fifteen
   days, hatching after fifteen more.
 - Spawns sparsely in shrubland, temperate forest, boreal forest and tundra, a little more in
@@ -59,7 +58,8 @@ Two breakages, both silent in different ways.
   animal is unfertilized, `CompTick` pins `eggProgress` to `eggProgressUnfertilizedMax`, and
   `CanLayNow` wants a full 1. The teshi's setting is 0.9, inherited untouched, so a lone female
   never lays at all and that crash was never possible for her. Read off the compiled game by
-  `_tools/Run-Functional-Tests.ps1`; the play-through in `TESTS.md`, scenario 4, confirms it.
+  `_tools/Run-Functional-Tests.ps1`; `TESTS.md`, scenario 4, describes the in-game
+  confirmation that remains to be performed.
 
 No balance value was changed. Nothing else in the teshi's defs needed touching: no `deathAction`,
 no toxic sensitivity, no C#.
@@ -69,7 +69,7 @@ no toxic sensitivity, no C#.
 Every def reference and every `ParentName` resolves against **Core alone**, so no DLC is required,
 and each reference points at the right *type* of def. Checked with the standalone suite against installed Core data.
 
-Beyond that, in three layers:
+Run the standalone technical suite:
 
 ```bash
 powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EggTeshiFertilized.label>œuf de teshi (fécondé)</EggTeshiFertilized.label>
+  <EggTeshiFertilized.description>Un œuf de teshi fécondé. Si tout se passe bien, un petit teshi devrait en éclore. Il peut être mangé cru, mais il est bien meilleur une fois cuit.</EggTeshiFertilized.description>
+  <EggTeshiUnfertilized.label>œuf de teshi (non fécondé)</EggTeshiUnfertilized.label>
+  <EggTeshiUnfertilized.description>Un œuf de teshi non fécondé. Il peut être mangé cru, mais il est bien meilleur une fois cuit.</EggTeshiUnfertilized.description>
+  <Teshi.label>teshi</Teshi.label>
+  <Teshi.description>Un grand prédateur bipède à plumes, originaire de Ki, une planète couverte de vastes forêts.</Teshi.description>
+  <Teshi.tools.left_claw.label>griffe gauche</Teshi.tools.left_claw.label>
+  <Teshi.tools.right_claw.label>griffe droite</Teshi.tools.right_claw.label>
+  <Teshi.tools.head.label>tête</Teshi.tools.head.label>
+</LanguageData>
+

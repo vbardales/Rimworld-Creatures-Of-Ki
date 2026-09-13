@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <BipedAnimalWithClawsAndTail.label>animal bipède</BipedAnimalWithClawsAndTail.label>
+  <BipedAnimalWithClawsAndTail.corePart.parts.left_lung.customLabel>poumon gauche</BipedAnimalWithClawsAndTail.corePart.parts.left_lung.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.right_lung.customLabel>poumon droit</BipedAnimalWithClawsAndTail.corePart.parts.right_lung.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.left_kidney.customLabel>rein gauche</BipedAnimalWithClawsAndTail.corePart.parts.left_kidney.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.right_kidney.customLabel>rein droit</BipedAnimalWithClawsAndTail.corePart.parts.right_kidney.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel>œil gauche</BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_eye.customLabel>œil droit</BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_eye.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_upper_ear.customLabel>oreille supérieure gauche</BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_upper_ear.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_lower_ear.customLabel>oreille inférieure gauche</BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_lower_ear.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_upper_ear.customLabel>oreille supérieure droite</BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_upper_ear.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_lower_ear.customLabel>oreille inférieure droite</BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_lower_ear.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.left_arm.customLabel>bras gauche</BipedAnimalWithClawsAndTail.corePart.parts.left_arm.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.left_arm.parts.front_left_claw.customLabel>griffe avant gauche</BipedAnimalWithClawsAndTail.corePart.parts.left_arm.parts.front_left_claw.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.right_arm.customLabel>bras droit</BipedAnimalWithClawsAndTail.corePart.parts.right_arm.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.right_arm.parts.right_claw.customLabel>griffe droite</BipedAnimalWithClawsAndTail.corePart.parts.right_arm.parts.right_claw.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.left_leg.customLabel>patte gauche</BipedAnimalWithClawsAndTail.corePart.parts.left_leg.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.left_leg.parts.left_footclaw.customLabel>griffe du pied gauche</BipedAnimalWithClawsAndTail.corePart.parts.left_leg.parts.left_footclaw.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.right_leg.customLabel>patte droite</BipedAnimalWithClawsAndTail.corePart.parts.right_leg.customLabel>
+  <BipedAnimalWithClawsAndTail.corePart.parts.right_leg.parts.right_footclaw.customLabel>griffe du pied droit</BipedAnimalWithClawsAndTail.corePart.parts.right_leg.parts.right_footclaw.customLabel>
+</LanguageData>

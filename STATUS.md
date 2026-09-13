@@ -1,4 +1,8 @@
 ---
+localization: complete
+translation_en: complete
+translation_fr: complete
+settings_audit: not_applicable
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofkirenew
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -16,9 +20,11 @@ showcase:     complete
 tested_on:
 workshop:
 maintainer:   Codex, current task responsible for this standalone repository
-updated:      2026-09-12
+updated:      2026-09-13
 remaining:
+  - unverified: English and French runtime display (animal, eggs, life stage, attacks and health body parts).
   - unverified: all seven TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
+  - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -141,3 +147,190 @@ confirmed identifiable title/version, readable reduced title words, visible blue
 or overlap, and a clear creature/eggs silhouette. The summary is intended for the full-size view.
 
 Delivered: Mod/About/Preview.png, 896 x 504, 665,299 bytes (below 900 kB). No publication performed.
+
+## Translation audit — 2026-09-13
+
+Scope: all four XML files under Mod/Defs (five concrete defs), and the three French
+DefInjected files under Mod/Languages/French. There are no assemblies, C# sources,
+patches, conditional integrations, LoadFolders or additional version folders in this mod.
+About metadata, technical comments, IDs, texture paths and repository documents are outside
+the in-game translation gate defined in ../TRANSLATIONS.md.
+
+Inventory: 31 owned text fields: 19 BodyDef entries (body label and 18 custom body-part
+labels), nine ThingDef entries (animal and two egg labels/descriptions, three attack labels),
+and three PawnKindDef entries (animal label, baby label and plural). All English texts are
+nonempty native Def values; an English DefInjected copy is unnecessary. French supplies
+31 unique, nonempty translations. The proper name teshi is intentionally retained.
+Inherited animal, egg, life-stage and body-part UI uses Core's translation mechanisms;
+no custom Keyed keys or generated-text resources are introduced. No owned strings contain
+format parameters, grammar tokens or rich-text tags. Meanings and French terminology were
+reviewed against the English sources, including fertilized/unfertilized eggs and left/right
+body parts. Nested injection paths use native translation handles rather than list indices.
+
+Checks: XML inventory count compared with unique nonempty French entries: 31/31.
+`powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1`:
+20 tests passed, zero failed against installed RimWorld 1.6 Core and assemblies.
+Injection-path check: 31 keys checked, zero errors, no unresolved targets, using
+`powershell -NoProfile -ExecutionPolicy Bypass -File ../scripts/Check-DefInjected.ps1 -TransMod Mod`.
+
+Runtime English/French checks remain unverified and are tracked in remaining. Inspect
+animal/egg information, the baby name and plural, melee tools and each custom health-part
+label in both languages; check fallback English, raw keys, accents and clipping. Historical
+stage is preserved; complete translation fields certify static readiness only.
+
+## Ordered workflow audit — 2026-09-13
+
+**Decision: `done` -> `done`.** This is a fresh audit of the working tree, not a
+carry-forward of the declared stage. The user's supplied workflow takes precedence over
+the parent protocols: settings source checks and applicable automated tests can pass
+`options` without a game session; interactive checks belong to `tested`.
+
+The stage values are literal workflow states, not numeric codes. `done` means all gates
+through `preTest -> done` are established and final in-game validation is pending.
+It does not mean tested in game or published.
+
+### Scope and reproducibility
+
+- Autonomous repository: `C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew`;
+  distributed content: its `Mod/` directory. Git reports this repository root, a local
+  `.git` directory, and no superproject. Physical placement under the old workspace does
+  not make this repository part of its Git history. No parent remote is required.
+- Audited HEAD: `f8fc3f24141f072707f04b04bbbfb182d3f8acbc`.
+  At audit start, `CHANGELOG.md`, `STATUS.md` and `TESTS.md` were modified; the three
+  `Mod/Languages/French/DefInjected/{BodyDef,PawnKindDef,ThingDef}/Teshi.xml` files were
+  untracked. The delivered working tree, including those translations, was tested.
+- This audit changes only this status and adds `_tools/audit-2026-09-13-manifest.json`.
+  The manifest records relative paths, sizes and SHA-256 for all 20 distributed files.
+  Prior edits and historical audit sections above are preserved. No build, generation,
+  gameplay modification, commit, push or publication was performed.
+- Protocols read: `../PUBLISHING.md`, `../STYLE_RIMWORLD.md`, `../MOD_SETTINGS.md`,
+  `../TRANSLATIONS.md`, and applicable `../AGENTS.md`.
+- Installed reference environment: RimWorld `1.6.4871 rev590`, Core data and managed
+  assemblies under `C:\Program Files (x86)\Steam\steamapps\common\RimWorld`.
+  Assembly-CSharp SHA-256:
+  `5CF1B5BE399D5B1C9C56CA72C9D35B4ECF307FEACF5859D04AC5A1AA5926356A`.
+
+### Ordered decisions
+
+| Transition | Result | Current evidence |
+| --- | --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated | Own Git root and remote; live GitHub API reports public/non-private; `git ls-remote origin HEAD` returns the audited HEAD, establishing a pushed commit. Identity, English documentation and distributed MIT notice checked. |
+| horsMonoRepo -> ModIcon generated | Validated; build not applicable | Finished XML-only animal port, no C# project or shipped assembly; 20 automated checks pass. Delivered PNG decodes at 128 x 128, 28,517 bytes; directly inspected. |
+| ModIcon generated -> Preview generated | Validated | Delivered PNG decodes at 896 x 504, 665,299 bytes, below 1 MB; inspected directly, with its existing 268-pixel thumbnail. No concrete camera defect found; no historical generation report or comparison screenshot required. |
+| Preview generated -> preOptions | Validated | English description; exact About title represented, `of` reduced in primary ink and `Renew` reduced in secondary ink. Blue accent is clearly distinct from golden secondary ink. Title/version readable, no clipping; public/open status needs no unofficial/prohibited suffix. |
+| preOptions -> options | Justified not applicable | Settings inventory below establishes no useful settings, empty page or MainButtons shortcut. Applicable automated checks passed; no runtime integration is claimed. |
+| options -> l10n | Validated | All 31 owned English Def text values reviewed against 31 nonempty unique French entries; injection validator passes all 31 paths without unresolved targets. |
+| l10n -> preTest | Validated | Five concrete definitions use vanilla classes and Core references. Core-only tests pass. No required third-party dependency, conditional patch, LoadFolders or version directory. About supports 1.6; DLC loadAfter entries are optional ordering, not requirements. |
+| preTest -> done | Validated | TESTS.md has seven functional scenarios with shared setup, actions and expected outcomes, plus FR/EN display checks. Automated suite and XML checks actually executed successfully on the manifest's working tree. |
+| done -> tested | Unverified | No game session was executed or reviewed in this audit; no matching Player.log, bilingual interface results or save-cycle results establish this gate. |
+
+### Settings audit
+
+Inventory covers all four Def XML files, About.xml, language resources, repository file
+inventory and the documented scope. This port adds a single animal, its body and eggs
+using vanilla animal/egg classes. Wildness (0.50), biome spawn weights, combat/body
+statistics, egg interval (15 days), fertilization count (1) and egg count (2) are fixed
+content/balance definitions, intentionally preserved by this port. Neither documentation
+nor sources offer a player configuration contract requiring XML editing. No configurable
+subsystem, optional behavior switch, inherited settings provider or integration-specific
+control was found. Turning these constants into sliders would add an unrequested balance
+feature rather than expose an existing useful configuration.
+
+No C# source/assembly, ModSettings implementation, settings category, MainButtonDef or
+MainTabWindow is present. Native classes used by these Defs provide content behavior, not
+a settings page. This establishes the absence of both an empty mod-options page and a
+settings shortcut from the sources, as permitted by the user's workflow.
+`settings_audit: not_applicable` is therefore justified. Settings input validation,
+application timing, reset/migration, persistence and shortcut interactions are not
+applicable. RIMMSQOL and other customization integrations: none tested or claimed.
+Actual animal/save behavior remains in the final runtime gate.
+
+### Checks executed and observed results
+
+1. `powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1`
+   exited 0: **20 tests, 0 failed**, 6,063 Core named defs, 438 abstract bases,
+   16,130 assembly types, five mod defs and 62 written fields. This includes shipped
+   XML parsing/packaging, classes, body/stat references, inheritance, egg and Wildness
+   checks, field readers, body coverage, combat groups, textures/case, biomes and food
+   flags. Reflection/IL checks are technical tests, not a simulation of in-game behavior.
+   Suite SHA-256: `F6FA7F6ADFF7C86AD8490196D2D2BF704B3E404895409218BEC59074CE163E6E`.
+2. `powershell -NoProfile -ExecutionPolicy Bypass -File ../scripts/Check-DefInjected.ps1 -TransMod Mod`
+   exited 0: **31 keys checked, 0 errors**, no unresolved target reported.
+   This validator indexes installed DLC as well (11,590 defs); dependency independence
+   is established separately by the Core-only suite, not by this larger index.
+   Validator SHA-256: `6242FC37F0B43C61967979F7837DB65D80E12BF8A019A4822D58C6532F6A2C6F`.
+3. Independent text inventory: BodyDef 19, ThingDef 9, PawnKindDef 3, totaling 31.
+   Corresponding French resources have 19/9/3 entries, zero empty values and duplicates.
+   Meanings, sided body parts, baby singular/plural and egg types reviewed; no owned
+   formatting parameters, grammar tokens, rich-text tags or additional code/UI text.
+   Native English sources suffice; inherited texts use vanilla localization.
+4. PNG decoding/dimensions/bytes and direct visual inspection of the delivered icon,
+   Preview and existing thumbnail. Palette/composition and stored QA JSON inspected;
+   historical font/contrast measurements were not rerun and are not presented as new
+   measurements. Sources and composition remain outside the distributed folder.
+5. `Get-FileHash LICENSE,Mod/LICENSE`: both are
+   `D2AA2F4AAE44377CF4563DC2F67365C28ABD3F33CCFE47402245EC6337837B8F`.
+   Live GitHub API retrieval of `emipa606/CreaturesOfKi/contents/LICENSE.md` confirms
+   MIT, copyright 2020 Mlie. Local provenance and port terms remain consistent with
+   that documented grant. No new license is assigned to third-party work. The earlier
+   limitation concerning the complete original contributor rights chain remains a
+   limitation, not newly established permission or a discovered prohibition.
+6. Remote read checks initially failed under restricted access; a permitted read-only
+   retry succeeded for Git HEAD, repository visibility and upstream license. No required
+   remote-access check remains pending.
+
+### Remaining checks and separate publication/documentation observations
+
+**Next transition, done -> tested:** execute TESTS.md in RimWorld 1.6 with Core and this
+mod, record actual results for all seven scenarios and FR/EN displays, inspect Player.log,
+and test a new game plus an existing save (including teshi/eggs across save/reload).
+Preserve game version, active mod list and evidence tied to the delivered manifest;
+rerun affected regression checks after any correction. These are unverified checks,
+not known gameplay failures. No settings or RIMMSQOL test is needed for the current mod.
+
+**Observed publication convention defect, outside the supplied stage gates:**
+About.xml contains a raw GitHub URL before the license/adoption paragraphs rather than
+ending with `[url=https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew]Source code on GitHub[/url]`.
+PUBLISHING.md requires this before the initial Workshop submission. The user's
+`preOptions` gate requires English description and naming, both satisfied; this
+publication formatting discrepancy does not add an extra stage blocker. No publication
+was requested or performed.
+
+**Non-blocking review notes:** the icon has conspicuous glow/orbital sparkles, a departure
+from the current prompt's flat/no-glow guidance, while its single mascot remains readable.
+README/About still describe the artwork as contradicting a bipedal animal; the earlier
+status inspection correctly notes that a resting pose cannot establish that contradiction.
+README's wording that scenario 4 "confirms" the behavior overstates the available runtime
+evidence, and ATTRIBUTION's old two-script verification paragraph is stale. These are
+documentary/style observations, not new runtime failures or reasons to generate assets.
+
+## Non-blocking audit fixes — 2026-09-13
+
+The user requested correction of the non-blocking findings after the ordered audit.
+All four observations above are now addressed; their original descriptions remain as
+historical evidence, not current outstanding defects.
+
+- About.xml now ends its English description with the prescribed Steam-formatted
+  Source code on GitHub link, targeting this repository. XML parsing and the exact
+  final link were checked.
+- README/About describe the teshi as bipedal and the showcase pose as resting.
+  README explicitly marks scenario 4's in-game confirmation as pending.
+- ATTRIBUTION now describes the actual standalone 20-check suite and its limitations,
+  corrects the inherited/new Def file count and the lone-female wording, and credits
+  the AI icon edit.
+- The built-in OpenAI image tool removed the icon's glow, orbital rings and sparkles.
+  Delivered Mod/About/ModIcon.png is 128 x 128, 14,065 bytes; directly inspected at
+  128 and 32 pixels. Prior icon: Art/ModIcon-before-2026-09-13.png. New source:
+  Art/ModIcon-flat-source.png. Exact prompt, method and QA: Art/ModIcon-edit-2026-09-13.md.
+
+Validation: reran _tools/Run-Functional-Tests.ps1 after the shipped edits:
+20 tests, 0 failed, exit 0, against the same RimWorld 1.6.4871 rev590 environment.
+XML and packaging checks pass. git diff --check passes.
+The original manifest is preserved; the current delivery is recorded in
+_tools/audit-2026-09-13-post-fixes-manifest.json. Comparing both manifests confirms
+that only Mod/About/About.xml and Mod/About/ModIcon.png changed in the distributed
+folder. Defs, French translations and gameplay textures are byte-identical, so their
+independent translation/settings validations remain applicable.
+
+Stage remains done. No in-game validation, commit, push or publication was performed.
+All runtime checks in remaining still await execution.
